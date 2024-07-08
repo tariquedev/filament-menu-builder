@@ -8,7 +8,7 @@ use Spatie\LaravelPackageTools\Package;
 use Illuminate\Support\Facades\Route;
 use Tarique\MenuBuilder\Http\Controllers\MenuItemController;
 
-class MenuManagementServiceProvider extends PackageServiceProvider
+class MenuBuilderServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'menu-builder';
 
