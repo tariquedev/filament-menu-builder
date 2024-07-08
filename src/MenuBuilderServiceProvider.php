@@ -3,6 +3,8 @@
 namespace Tarique\MenuBuilder;
 
 use Filament\Facades\Filament;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Illuminate\Support\Facades\Route;
@@ -37,10 +39,12 @@ class MenuBuilderServiceProvider extends PackageServiceProvider
             __DIR__.'/../public/js' => public_path('vendor/menu-builder/js'),
         ], 'menu-builder-assets');
 
-        Filament::registerScripts([
-            asset('vendor/menu-builder/js/menu-builder.js'),
-        ], true);
-
+        // Filament::registerScripts([
+        //     asset('vendor/menu-builder/js/menu-builder.js'),
+        // ], true);
+        FilamentAsset::register([
+            Js::make('custom-script', __DIR__ . 'vendor/menu-builder/js/menu-builder.js'),
+        ]);
         Route::middleware('web')
             ->prefix('admin')
             ->group(function () {
