@@ -3,6 +3,14 @@
     "description": "A Filament plugin for managing menus.",
     "type": "library",
     "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Tarique Hasan",
+        "email": "tariquehasan19@gmail.com",
+        "role": "Full Stack Engineer"
+        }
+    ],
     "require": {
         "php": "^8.0|^8.2",
         "filament/filament": "^3.0",
