@@ -3,12 +3,12 @@
 namespace Tarique\MenuBuilder;
 
 use Filament\Facades\Filament;
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Illuminate\Support\Facades\Route;
 use Tarique\MenuBuilder\Http\Controllers\MenuItemController;
 
-class MenuManagementServiceProvider extends PluginServiceProvider
+class MenuManagementServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'menu-builder';
 
