@@ -33,7 +33,7 @@ class MenuBuilderServiceProvider extends PackageServiceProvider
         //     ], 'menu-builder-assets');
         // }
 
-        $$this->publishes([
+        $this->publishes([
             __DIR__.'/../public/js' => public_path('vendor/menu-builder/js'),
         ], 'menu-builder-assets');
 
