@@ -34,16 +34,15 @@ class MenuBuilderServiceProvider extends PackageServiceProvider
         //         __DIR__.'/../public/js' => public_path('tarique/menu-builder/js'),
         //     ], 'menu-builder-assets');
         // }
-
         $this->publishes([
-            __DIR__.'/../public/js' => public_path('vendor/menu-builder/js'),
+            __DIR__.'/../public' => public_path('vendor/menu-builder'),
         ], 'menu-builder-assets');
 
         // Filament::registerScripts([
         //     asset('vendor/menu-builder/js/menu-builder.js'),
         // ], true);
         FilamentAsset::register([
-            Js::make('custom-script', __DIR__ . 'vendor/menu-builder/js/menu-builder.js'),
+            Js::make('custom-script', __DIR__ . '/vendor/menu-builder/js/menu-builder.js'),
         ]);
         Route::middleware('web')
             ->prefix('admin')
