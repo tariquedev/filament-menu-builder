@@ -9,6 +9,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Illuminate\Support\Facades\Route;
 use Tarique\MenuBuilder\Http\Controllers\MenuItemController;
+use Tarique\MenuBuilder\Resources\MenuItemResource;
 
 class MenuBuilderServiceProvider extends PackageServiceProvider
 {
@@ -52,11 +53,17 @@ class MenuBuilderServiceProvider extends PackageServiceProvider
         $this->publishes([
             __DIR__.'/../public' => public_path('vendor/menu-builder'),
         ], 'menu-builder-assets');
-        
+        // Publish the migration files
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'menu-builder-migrations');
+
         Route::middleware('web')
             ->prefix('admin')
             ->group(function () {
                 Route::post('/menu-items/reorder', [MenuItemController::class, 'reorder'])->name('menu-items.reorder');
             });
+
+        MenuItemResource::navigation();
     }
 }
