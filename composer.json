@@ -1,9 +1,14 @@
 {
     "name": "tarique/menu-builder",
     "description": "A Filament plugin for managing menus.",
-    "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^7.3|^8.0",
+        "filament/filament": "^3.0",
+        "spatie/laravel-permission": "^6.9.0"
+    },
     "authors": [
         {
         "name": "Tarique Hasan",
@@ -11,11 +16,6 @@
         "role": "Full Stack Engineer"
         }
     ],
-    "require": {
-        "php": "^8.0|^8.2",
-        "filament/filament": "^3.0",
-        "spatie/laravel-permission": "^6.9"
-    },
     "autoload": {
         "psr-4": {
             "Tarique\\MenuBuilder\\": "src/"
@@ -28,5 +28,4 @@
             ]
         }
     }
-    
 }
