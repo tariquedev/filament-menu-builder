@@ -1,7 +1,6 @@
 {
     "name": "tarique/menu-builder",
     "description": "A Filament plugin for managing menus.",
-    "version": "1.0.4",
     "license": "MIT",
     "type": "library",
     "require": {
